@@ -1,6 +1,7 @@
 # MobiMax
 
 A full-stack accessories marketplace project with:
+
 - `backend/`: Express.js API and MongoDB data layer
 - `front/`: Vue 3 storefront for customers
 - `adminpanel/`: Vue 3 admin dashboard for managing products, orders, categories, brands, banners, and settings
@@ -90,4 +91,3 @@ npm run dev
 - Ensure MongoDB is running and reachable by the backend.
 - Configure CORS or proxy settings if you run frontend and backend on different hosts/ports.
 - Use the admin panel to manage products, categories, orders, banners, brands, logs, and settings.
-
