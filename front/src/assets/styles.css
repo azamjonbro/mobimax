@@ -595,3 +595,9 @@ footer {
 .btn-accent-outline:hover {
   background-color: rgba(240, 0, 0, 0.04);
 }
+
+@media (max-width: 480px) {
+  .drawer {
+    padding: 24px 20px;
+  }
+}

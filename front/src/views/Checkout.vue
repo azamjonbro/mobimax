@@ -267,8 +267,10 @@ export default {
 .review-item-img {
   width: 50px;
   height: 50px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 6px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
 }
 
 .review-item-info {

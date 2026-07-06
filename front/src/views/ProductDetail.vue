@@ -514,6 +514,13 @@ export default {
   gap: 32px;
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab-headers::-webkit-scrollbar {
+  display: none;
 }
 
 .tab-hdr {
