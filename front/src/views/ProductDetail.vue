@@ -541,31 +541,73 @@ export default {
 }
 
 .html-content {
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 15px;
+  color: #2c2c2e;
+}
+
+.html-content p {
+  margin-bottom: 16px;
+}
+
+.html-content strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.html-content h3, .html-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.html-content ul, .html-content ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.html-content li {
+  margin-bottom: 8px;
 }
 
 .specs-table {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
 }
 
 .specs-row {
   display: flex;
-  justify-content: space-between;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--color-border);
+  flex-direction: column;
+  background: var(--color-bg);
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: var(--transition-smooth);
 }
 
-.specs-row:last-child {
-  border-bottom: none;
+.specs-row:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+  background: var(--color-white);
+  border-color: rgba(7, 27, 134, 0.1);
 }
 
 .spec-key {
-  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
 }
 
 .spec-val {
-  color: var(--color-text-secondary);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 .downloads-list {
