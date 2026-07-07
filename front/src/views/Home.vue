@@ -183,11 +183,68 @@
     <!-- Main Products Catalog layout -->
     <section class="catalog-section" id="catalog-section">
       <div class="catalog-container">
-        <!-- Product Listing Grid Area (Full Width) -->
+        <!-- Filters Sidebar on Desktop -->
+        <aside class="desktop-filters-sidebar">
+          <div class="filters-card card">
+            <div class="filters-sidebar-header">
+              <h3>Filtrlar</h3>
+              <button class="clear-sidebar-filters" @click="resetFilters">Tozalash</button>
+            </div>
+
+            <!-- Price -->
+            <div class="filter-group">
+              <label class="form-label">Narx oralig'i (USD)</label>
+              <div class="price-inputs">
+                <input type="number" v-model="filters.minPrice" @change="applyFilters" class="form-input price-limit" placeholder="Min" />
+                <span>-</span>
+                <input type="number" v-model="filters.maxPrice" @change="applyFilters" class="form-input price-limit" placeholder="Max" />
+              </div>
+            </div>
+
+            <!-- Frequency -->
+            <div class="filter-group">
+              <label class="form-label">Chastota diapazoni</label>
+              <select v-model="filters.frequency" @change="applyFilters" class="form-input">
+                <option value="">Istalgan chastota</option>
+                <option value="UHF">UHF (400-470 MHz)</option>
+                <option value="VHF">VHF (136-174 MHz)</option>
+                <option value="Dual">Dual Band</option>
+              </select>
+            </div>
+
+            <!-- Power -->
+            <div class="filter-group">
+              <label class="form-label">Quvvat darajasi</label>
+              <select v-model="filters.power" @change="applyFilters" class="form-input">
+                <option value="">Istalgan quvvat</option>
+                <option value="5 Watts">5 Watt</option>
+                <option value="8 Watts">8 Watt</option>
+                <option value="10 Watts">10 Watt</option>
+                <option value="50 Watts">50 Watt</option>
+              </select>
+            </div>
+
+            <!-- Availability -->
+            <div class="filter-group checkbox-group">
+              <input type="checkbox" id="desk-in-stock" v-model="filters.inStock" @change="applyFilters" />
+              <label for="desk-in-stock">Faqat omborda bor mahsulotlar</label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Product Listing Grid Area -->
         <div class="products-listing-area">
           <div class="grid-controls-row">
             <span class="results-count-text">{{ pagination.total }} ta mahsulot topildi</span>
             <div class="controls-actions-row">
+              <!-- Mobile Filters Button Toggle -->
+              <button class="btn btn-secondary mobile-filter-btn" @click="showFilterDrawer = true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-right: 6px;">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+                Filtrlar
+              </button>
+
               <select v-model="filters.sort" @change="applyFilters" class="form-input sort-select-luxury">
                 <option value="">Saralash: Yangi kelganlar</option>
                 <option value="price_asc">Narx: arzonidan qimmatiga</option>
