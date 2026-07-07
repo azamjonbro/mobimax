@@ -412,14 +412,7 @@ export default {
         page: 1,
         totalPages: 1
       },
-      quickOrderProduct: null,
-      quickOrderForm: {
-        name: '',
-        phone: ''
-      },
-      quickOrderSubmitting: false,
-      quickOrderSuccess: false,
-      quickOrderLeadId: ''
+
     };
   },
   computed: {
