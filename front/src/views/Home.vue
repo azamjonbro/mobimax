@@ -1479,17 +1479,17 @@ export default {
 }
 
 .add-cart-luxury-btn {
-  width: 100%;
+  flex: 1.3;
   height: 44px !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
   border-radius: 12px;
   flex-shrink: 0;
 }
 
 .quote-luxury-btn {
-  width: 100%;
+  flex: 0.7;
   height: 44px !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
   border-radius: 12px;
   flex-shrink: 0;
 }
@@ -1754,6 +1754,14 @@ export default {
   .benefits-section {
     padding: 60px 24px;
     margin: 40px -20px -20px;
+  }
+  .luxury-actions-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .add-cart-luxury-btn, .quote-luxury-btn {
+    width: 100%;
+    flex: none !important;
   }
 }
 
