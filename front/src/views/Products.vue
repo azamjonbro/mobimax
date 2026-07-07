@@ -541,13 +541,15 @@ export default {
 }
 
 .product-desc-snippet {
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1.5;
   color: var(--color-text-secondary);
   margin-bottom: 12px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  height: 36px;
 }
 
 .product-specs-strip {
@@ -558,12 +560,24 @@ export default {
 }
 
 .spec-tag {
-  background: var(--color-bg);
-  padding: 4px 8px;
-  border-radius: 4px;
   font-size: 11px;
-  color: var(--color-text-secondary);
-  font-weight: 500;
+  background: rgba(7, 27, 134, 0.04);
+  color: var(--color-primary);
+  border: 1px solid rgba(7, 27, 134, 0.08);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.spec-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  flex-shrink: 0;
 }
 
 /* Card internals matching home featured list */
