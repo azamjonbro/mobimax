@@ -254,6 +254,12 @@ export default {
       this.filters.category = q.category || '';
       this.filters.brand = q.brand || '';
       this.filters.search = q.search || '';
+      this.filters.minPrice = q.minPrice || '';
+      this.filters.maxPrice = q.maxPrice || '';
+      this.filters.frequency = q.frequency || '';
+      this.filters.power = q.power || '';
+      this.filters.inStock = q.inStock === 'true';
+      this.filters.sort = q.sort || '';
       this.filters.page = Number(q.page) || 1;
     },
     async fetchFilterOptions() {
