@@ -13,11 +13,11 @@ module.exports = defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'https://mobimax.techinfo.uz',
+        target: 'http://localhost:5001',
         changeOrigin: true
       },
       '/uploads': {
-        target: 'https://mobimax.techinfo.uz',
+        target: 'http://localhost:5001',
         changeOrigin: true
       }
     }

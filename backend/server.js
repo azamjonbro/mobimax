@@ -15,7 +15,8 @@ const app = express();
 
 // Security HTTP headers with configurations allowing image loading from local uploads
 app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" }
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  crossOriginEmbedderPolicy: false
 }));
 
 // Rate limiter: Max 200 requests per 15 minutes from an IP
