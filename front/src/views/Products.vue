@@ -291,12 +291,10 @@ export default {
     applyFilters() {
       this.filters.page = 1;
       this.pushRouteQuery();
-      this.fetchProducts();
     },
     changePage(newPage) {
       this.filters.page = newPage;
       this.pushRouteQuery();
-      this.fetchProducts();
     },
     debounceSearch() {
       if (this.searchTimeout) clearTimeout(this.searchTimeout);
@@ -309,6 +307,12 @@ export default {
       if (this.filters.category) query.category = this.filters.category;
       if (this.filters.brand) query.brand = this.filters.brand;
       if (this.filters.search) query.search = this.filters.search;
+      if (this.filters.minPrice) query.minPrice = this.filters.minPrice;
+      if (this.filters.maxPrice) query.maxPrice = this.filters.maxPrice;
+      if (this.filters.frequency) query.frequency = this.filters.frequency;
+      if (this.filters.power) query.power = this.filters.power;
+      if (this.filters.inStock) query.inStock = String(this.filters.inStock);
+      if (this.filters.sort) query.sort = this.filters.sort;
       if (this.filters.page > 1) query.page = this.filters.page;
       
       this.$router.push({ path: '/products', query }).catch(() => {});
@@ -327,7 +331,6 @@ export default {
         page: 1
       };
       this.$router.push({ path: '/products' });
-      this.fetchProducts();
     },
     viewProduct(slug) {
       this.$router.push(`/products/${slug}`);
