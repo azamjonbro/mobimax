@@ -1382,9 +1382,9 @@ export default {
   }
 }
 
-/* Product Card - Height ~535px, luxury layout */
+/* Product Card - Dynamic self-adjusting height, luxury layout */
 .product-card-luxury {
-  height: 535px;
+  height: 100%;
   padding: 0;
   position: relative;
   display: flex;
@@ -1829,7 +1829,7 @@ export default {
     gap: 16px;
   }
   .product-card-luxury {
-    height: 495px;
+    height: 100%;
   }
   .card-image-section {
     height: 180px;
@@ -1887,7 +1887,7 @@ export default {
     width: 100%;
   }
   .product-card-luxury {
-    height: 515px;
+    height: 100%;
   }
 }
 </style>
