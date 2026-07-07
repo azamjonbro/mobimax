@@ -1582,19 +1582,19 @@ export default {
 }
 
 .add-cart-luxury-btn {
-  flex: 1.3;
-  height: 38px;
-  font-size: 11px !important;
+  width: 100%;
+  height: 44px !important;
+  font-size: 13px !important;
   border-radius: 12px;
-  padding: 0 !important;
+  flex-shrink: 0;
 }
 
 .quote-luxury-btn {
-  flex: 0.7;
-  height: 38px;
-  font-size: 11px !important;
+  width: 100%;
+  height: 44px !important;
+  font-size: 13px !important;
   border-radius: 12px;
-  padding: 0 !important;
+  flex-shrink: 0;
 }
 
 /* Injected CRM CTA Card luxury style */
@@ -1802,7 +1802,7 @@ export default {
     gap: 16px;
   }
   .product-card-luxury {
-    height: 440px;
+    height: 495px;
   }
   .card-image-section {
     height: 180px;
