@@ -267,9 +267,13 @@
                   <span class="luxury-brand-tag">{{ prod.brand?.name }}</span>
                   <h3 class="luxury-product-title" @click="viewProduct(prod.slug)">{{ prod.name }}</h3>
                   
+                  <!-- Product short description snippet -->
+                  <p class="luxury-product-desc-snippet">{{ stripHtml(prod.description) }}</p>
+                  
                   <!-- Short specs highlights -->
                   <div class="luxury-specs-tags">
                     <span v-for="spec in prod.specifications?.slice(0,2)" :key="spec.key" class="luxury-spec-pill">
+                      <span class="spec-dot"></span>
                       {{ spec.value }}
                     </span>
                   </div>
