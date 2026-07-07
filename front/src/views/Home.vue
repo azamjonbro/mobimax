@@ -1429,17 +1429,43 @@ export default {
 
 .luxury-specs-tags {
   display: flex;
-  gap: 6px;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
 .luxury-spec-pill {
-  font-size: 10px;
-  background: var(--color-bg);
+  font-size: 11px;
+  background: rgba(7, 27, 134, 0.04);
+  color: var(--color-primary);
+  border: 1px solid rgba(7, 27, 134, 0.08);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.spec-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.luxury-product-desc-snippet {
+  font-size: 12px;
   color: var(--color-text-secondary);
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 36px;
 }
 
 .luxury-ratings-row {
