@@ -119,31 +119,7 @@
       </div>
     </div>
 
-    <!-- Quick Categories (Apple rounded icons style with scrolling) -->
-    <section class="categories-section">
-      <div class="categories-container">
-        <h2 class="section-title text-center">Uskunalar toifalari</h2>
-        <p class="section-subtitle text-center">Barcha sohalar uchun mo'ljallangan tizimlar</p>
-        
-        <div class="categories-scroller">
-          <div 
-            v-for="cat in categories" 
-            :key="cat._id"
-            class="category-card-luxury"
-            :class="{ active: filters.category === cat.slug }"
-            @click="selectCategory(cat.slug)"
-          >
-            <div class="category-icon-bg">
-              <span v-html="getCategoryIconSvg(cat.slug)"></span>
-            </div>
-            <div class="category-card-info">
-              <h4>{{ cat.name }}</h4>
-              <p>{{ cat.productCount || 0 }} xil uskuna</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Popular Brands Logo Cards -->
     <section class="brands-section-luxury">
