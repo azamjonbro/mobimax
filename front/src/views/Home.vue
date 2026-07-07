@@ -297,13 +297,10 @@
                     </div>
                   </div>
 
-                  <!-- Bottom buttons aligned side-by-side -->
+                  <!-- Bottom button -->
                   <div class="luxury-actions-buttons">
-                    <button class="btn btn-primary add-cart-luxury-btn" @click="cartStore.addToCart(prod, 1)">
+                    <button class="btn btn-primary add-cart-luxury-btn" @click="cartStore.addToCart(prod, 1)" style="width: 100%;">
                       Savatga qo'shish
-                    </button>
-                    <button class="btn btn-accent-outline quote-luxury-btn" @click="openQuickOrder(prod)">
-                      ⚡ Tezkor buyurtma
                     </button>
                   </div>
                 </div>
@@ -369,50 +366,7 @@
 
 
 
-    <!-- Quick Order Modal dialog -->
-    <div v-if="quickOrderProduct" class="modal-backdrop" @click="closeQuickOrder"></div>
-    <div v-if="quickOrderProduct" class="quick-order-modal card">
-      <div class="modal-header">
-        <h3>Tezkor buyurtma</h3>
-        <button class="close-modal-btn" @click="closeQuickOrder">&times;</button>
-      </div>
-      
-      <div class="modal-body">
-        <div v-if="quickOrderSuccess" class="quick-order-success-view text-center" style="padding: 10px 0;">
-          <div style="font-size: 40px; color: #34c759; margin-bottom: 12px;">✓</div>
-          <h4>Buyurtmangiz ro'yxatga olindi!</h4>
-          <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 16px;">
-            Lid ID: <strong>{{ quickOrderLeadId }}</strong>
-          </p>
-          <p style="font-size: 13px; margin-bottom: 20px;">Menejerlarimiz tez orada siz bilan bog'lanishadi.</p>
-          <button class="btn btn-primary" style="width: 100%;" @click="closeQuickOrder">Yopish</button>
-        </div>
 
-        <div v-else>
-          <div class="quick-prod-preview" style="display: flex; gap: 12px; align-items: center; margin-bottom: 20px; background: var(--color-bg); padding: 10px; border-radius: 8px;">
-            <img :src="quickOrderProduct.mainImage || '/uploads/walkie_talkie_luxury.png'" style="width: 50px; height: 50px; object-fit: contain;" />
-            <div>
-              <h4 style="font-size: 14px; font-weight: 700;">{{ quickOrderProduct.name }}</h4>
-              <span style="color: var(--color-primary); font-weight: 700; font-size: 13px;">${{ quickOrderProduct.price.toFixed(2) }}</span>
-            </div>
-          </div>
-
-          <form @submit.prevent="submitQuickOrder">
-            <div class="form-group">
-              <label class="form-label">Ismingiz *</label>
-              <input type="text" v-model="quickOrderForm.name" class="form-input" placeholder="Ismingizni kiriting" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Telefon raqamingiz *</label>
-              <input type="tel" v-model="quickOrderForm.phone" class="form-input" placeholder="+998 (90) 123-4567" required />
-            </div>
-            <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 10px;" :disabled="quickOrderSubmitting">
-              {{ quickOrderSubmitting ? 'Yuborilmoqda...' : 'Tasdiqlash' }}
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
