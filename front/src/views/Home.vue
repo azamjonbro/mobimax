@@ -682,6 +682,11 @@ export default {
       if (searchContainer && !searchContainer.contains(e.target)) {
         this.showSearchSuggestions = false;
       }
+    },
+    stripHtml(html) {
+      if (!html) return '';
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      return doc.body.textContent || "";
     }
   }
 };
