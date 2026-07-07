@@ -1161,7 +1161,7 @@ export default {
 
 .catalog-container {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 1fr;
   gap: 32px;
   max-width: 1300px;
   margin: 0 auto;
