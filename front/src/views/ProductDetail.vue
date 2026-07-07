@@ -106,11 +106,17 @@
 
         <div v-if="tab === 'downloads'" class="downloads-list">
           <div class="download-item">
-            <span>📄 {{ product.name }} Texnik foydalanish qo'llanmasi (PDF)</span>
+            <span style="display: inline-flex; align-items: center; gap: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18" stroke-width="2" style="color: var(--color-accent); flex-shrink: 0;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              {{ product.name }} Texnik foydalanish qo'llanmasi (PDF)
+            </span>
             <a href="#" @click.prevent="downloadPlaceholder" class="download-link">Yuklab olish</a>
           </div>
           <div class="download-item">
-            <span>📄 Ratsiyani dasturlash chastotasi qo'llanmasi (PDF)</span>
+            <span style="display: inline-flex; align-items: center; gap: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18" stroke-width="2" style="color: var(--color-accent); flex-shrink: 0;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              Ratsiyani dasturlash chastotasi qo'llanmasi (PDF)
+            </span>
             <a href="#" @click.prevent="downloadPlaceholder" class="download-link">Yuklab olish</a>
           </div>
         </div>
