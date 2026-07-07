@@ -602,4 +602,16 @@ footer {
   .drawer {
     padding: 24px 20px;
   }
+  .nav-brand {
+    font-size: 17px;
+  }
+  .nav-links {
+    gap: 12px;
+  }
+  .nav-link {
+    font-size: 12px;
+  }
+  .nav-actions {
+    gap: 10px;
+  }
 }

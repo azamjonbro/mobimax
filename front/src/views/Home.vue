@@ -1796,6 +1796,33 @@ export default {
   }
   .brands-grid-luxury {
     grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .brand-card-luxury {
+    padding: 14px 10px;
+    border-radius: 14px;
+  }
+  .brand-logo-text {
+    font-size: 13px;
+  }
+  .grid-controls-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .controls-actions-row {
+    width: 100%;
+    gap: 8px;
+  }
+  .mobile-filter-btn {
+    flex: 1;
+    justify-content: center;
+    height: 42px;
+  }
+  .sort-select-luxury {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
   }
   .products-grid-luxury {
     grid-template-columns: repeat(2, 1fr);
@@ -1839,7 +1866,14 @@ export default {
   }
   .brands-grid-luxury {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 10px;
+  }
+  .brand-card-luxury {
+    padding: 12px 8px;
+    border-radius: 12px;
+  }
+  .brand-logo-text {
+    font-size: 12px;
   }
   .grid-4-columns {
     grid-template-columns: 1fr;
