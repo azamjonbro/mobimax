@@ -96,7 +96,10 @@
 
         <div v-if="tab === 'specs'" class="specs-table">
           <div v-for="spec in product.specifications" :key="spec.key" class="specs-row">
-            <span class="spec-key">{{ spec.key }}</span>
+            <div class="spec-card-header">
+              <span class="spec-icon-svg" v-html="getSpecIconSvg(spec.key)"></span>
+              <span class="spec-key">{{ spec.key }}</span>
+            </div>
             <span class="spec-val">{{ spec.value }}</span>
           </div>
         </div>
