@@ -594,11 +594,11 @@ export default {
   gap: 6px;
 }
 
-.spec-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: var(--color-accent);
+.spec-icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 
