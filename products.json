@@ -1,0 +1,178 @@
+[
+  {
+    "name": "MobiMax R1 Long-Range Portable Radio",
+    "slug": "mobimax-r1-long-range-portable-radio",
+    "sku": "MM-R1-PORT",
+    "description": "<p>The <strong>MobiMax R1</strong> is our flagship long-range walkie talkie engineered for maximum reliability in construction, security operations, and emergency environments. It features a rugged, IP67 waterproof design with an integrated noise-cancelling microphone.</p>",
+    "price": 189.0,
+    "oldPrice": 249.0,
+    "discount": 24,
+    "images": [
+      "/uploads/placeholder_r1_1.webp",
+      "/uploads/placeholder_r1_2.webp"
+    ],
+    "mainImage": "/uploads/placeholder_r1_1.webp",
+    "stock": 45,
+    "featured": true,
+    "popular": true,
+    "new": true,
+    "status": "active",
+    "specifications": [
+      { "key": "Frequency Band", "value": "UHF 400-470 MHz / VHF 136-174 MHz" },
+      { "key": "Power Output", "value": "10 Watts (High) / 5 Watts (Low)" },
+      { "key": "Effective Range", "value": "Up to 15 Kilometers (Open area)" },
+      { "key": "Battery Capacity", "value": "3800 mAh Li-ion (Up to 36 Hours)" },
+      { "key": "Water Resistance", "value": "IP67 Waterproof & Dustproof" }
+    ],
+    "seo": {
+      "title": "MobiMax R1 Portable Walkie Talkie | Long Range UHF/VHF",
+      "description": "Buy the MobiMax R1 Long Range Walkie Talkie. High-power 10W output with IP67 waterproofing and robust UHF/VHF bands.",
+      "keywords": "MobiMax R1, long range ratsiya, walkie talkie, 10W radio"
+    }
+  },
+  {
+    "name": "Baofeng UV-9R Plus Waterproof Radio",
+    "slug": "baofeng-uv-9r-plus-waterproof-radio",
+    "sku": "BF-UV9R-PLUS",
+    "description": "<p>The classic dual-band <strong>Baofeng UV-9R Plus</strong> boasts heavy-duty weather proofing, powerful transmission capability, and a large backlit display. Ideal for tactical outdoor teams and remote warehouse communications.</p>",
+    "price": 79.0,
+    "oldPrice": 99.0,
+    "discount": 20,
+    "images": [
+      "/uploads/placeholder_uv9_1.webp"
+    ],
+    "mainImage": "/uploads/placeholder_uv9_1.webp",
+    "stock": 120,
+    "featured": false,
+    "popular": true,
+    "new": false,
+    "status": "active",
+    "specifications": [
+      { "key": "Frequency Band", "value": "VHF/UHF Dual Band 136-174 / 400-520 MHz" },
+      { "key": "Power Output", "value": "8 Watts" },
+      { "key": "Effective Range", "value": "8 - 12 Kilometers" },
+      { "key": "Battery Capacity", "value": "2800 mAh" },
+      { "key": "Channels", "value": "128 Channels memory" }
+    ],
+    "seo": {
+      "title": "Baofeng UV-9R Plus Waterproof Walkie Talkie",
+      "description": "Explore the Baofeng UV-9R Plus waterproof walkie talkie. Heavy-duty construction, dual band, and 8W power.",
+      "keywords": "Baofeng UV-9R, dual band radio, waterproof ratsiya"
+    }
+  },
+  {
+    "name": "Kenwood TM-D710G Dual-Band Mobile Transceiver",
+    "slug": "kenwood-tm-d710g-mobile-transceiver",
+    "sku": "KW-TMD710G-VEH",
+    "description": "<p>Built for vehicular communications, this heavy-duty mobile transceiver provides a staggering <strong>50 Watts</strong> output. Built-in GPS receiver and APRS compliance make it the choice of professional logisticians and convoy controllers.</p>",
+    "price": 549.0,
+    "oldPrice": 599.0,
+    "discount": 8,
+    "images": [
+      "/uploads/placeholder_tmd_1.webp"
+    ],
+    "mainImage": "/uploads/placeholder_tmd_1.webp",
+    "stock": 15,
+    "featured": true,
+    "popular": false,
+    "new": true,
+    "status": "active",
+    "specifications": [
+      { "key": "Frequency Band", "value": "VHF 144-148 MHz / UHF 430-450 MHz" },
+      { "key": "Power Output", "value": "50 Watts" },
+      { "key": "Effective Range", "value": "40 - 60 Kilometers (with external vehicle antenna)" },
+      { "key": "GPS Integration", "value": "Built-in GPS and TNC logger" }
+    ],
+    "seo": {
+      "title": "Kenwood TM-D710G Mobile Transceiver | 50W Vehicle Radio",
+      "description": "convoy radio Kenwood TM-D710G. Heavy-duty 50 Watts dual-band vehicle station with built-in GPS.",
+      "keywords": "Kenwood vehicle radio, TM-D710G, 50W radio transmitter"
+    }
+  },
+  {
+    "name": "MobiMax Tactical Whip Antenna (UHF/VHF)",
+    "slug": "mobimax-tactical-whip-antenna",
+    "sku": "MM-TAC-ANT",
+    "description": "<p>Upgrade your walkie talkie ranges up to 30% with this foldable tactical whip antenna. Constructed with flexible spring steel, it can be bent and tucked inside loops when not in use.</p>",
+    "price": 29.0,
+    "oldPrice": 39.0,
+    "discount": 25,
+    "images": [
+      "/uploads/placeholder_ant_1.webp"
+    ],
+    "mainImage": "/uploads/placeholder_ant_1.webp",
+    "stock": 350,
+    "featured": false,
+    "popular": true,
+    "new": true,
+    "status": "active",
+    "specifications": [
+      { "key": "Gain", "value": "3.2 dBi (VHF) / 5.2 dBi (UHF)" },
+      { "key": "Connector Type", "value": "SMA-Female" },
+      { "key": "Length", "value": "48 Centimeters (Foldable)" }
+    ],
+    "seo": {
+      "title": "MobiMax Tactical Whip Antenna | UHF/VHF",
+      "description": "Foldable tactical whip antenna for walkie talkies. Enhances signal range by up to 30%.",
+      "keywords": "tactical antenna, walkie talkie antenna, folding antenna"
+    }
+  },
+  {
+    "name": "Professional Acoustic Tube Earpiece",
+    "slug": "professional-acoustic-tube-earpiece",
+    "sku": "MM-EAR-ACOUST",
+    "description": "<p>Discreet acoustic tube headset with a surgical-grade transparent tube, in-line PTT button, and secure collar clips. Designed specifically for security personnel and event managers.</p>",
+    "price": 15.0,
+    "oldPrice": 20.0,
+    "discount": 25,
+    "images": [
+      "/uploads/placeholder_ear_1.webp"
+    ],
+    "mainImage": "/uploads/placeholder_ear_1.webp",
+    "stock": 500,
+    "featured": true,
+    "popular": true,
+    "new": false,
+    "status": "active",
+    "specifications": [
+      { "key": "Cable Type", "value": "Reinforced Kevlar Core" },
+      { "key": "Connector", "value": "2-Pin Motorola Standard" },
+      { "key": "Microphone", "value": "High Sensitivity In-line PTT" }
+    ],
+    "seo": {
+      "title": "Professional Acoustic Tube Headset | Security Earpiece",
+      "description": "Premium security acoustic tube headset. Comfortable, stealth design with robust Kevlar reinforced cable.",
+      "keywords": "acoustic tube earpiece, security earpiece, radio headset"
+    }
+  },
+  {
+    "name": "MobiMax Walkie Talkie Luxury Special Edition",
+    "slug": "mobimax-walkie-talkie-luxury-special-edition",
+    "sku": "MM-WT-LUXURY",
+    "description": "<p>Limited special edition B2B walkie-talkie designed for luxury hospitality, corporate environments, and VIP events. Features anodized aluminum details, premium battery cell, and crystal-clear audio.</p>",
+    "price": 299.0,
+    "oldPrice": 349.0,
+    "discount": 14,
+    "images": [
+      "/uploads/walkie_talkie_luxury.png",
+      "/uploads/walkie_talkie_luxury_hero.png"
+    ],
+    "mainImage": "/uploads/walkie_talkie_luxury.png",
+    "stock": 25,
+    "featured": true,
+    "popular": true,
+    "new": true,
+    "status": "active",
+    "specifications": [
+      { "key": "Material", "value": "Anodized Aluminum & High-Impact Polycarbonate" },
+      { "key": "Power Output", "value": "5 Watts" },
+      { "key": "Battery", "value": "4200 mAh Premium Li-ion" },
+      { "key": "Audio", "value": "Ultra-HD Noise Cancelling DSP" }
+    ],
+    "seo": {
+      "title": "MobiMax Luxury Walkie Talkie Special Edition",
+      "description": "High-end luxury special edition walkie talkie. Anodized aluminum frame, HD noise cancelling, and long range.",
+      "keywords": "luxury walkie talkie, premium radio, vip communications"
+    }
+  }
+]
