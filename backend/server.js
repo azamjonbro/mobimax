@@ -13,28 +13,28 @@ const adminRoutes = require('./routes/admin');
 
 const app = express();
 
-// Security HTTP headers with configurations allowing image loading from local uploads
-app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" },
-  crossOriginEmbedderPolicy: false
-}));
-
-// Rate limiter: Max 200 requests per 15 minutes from an IP
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 200,
-  message: { message: 'Too many requests from this IP, please try again after 15 minutes.' },
-  standardHeaders: true,
-  legacyHeaders: false
-});
-app.use('/api/', limiter);
-
 // CORS configuration (allow local dev server connections)
 app.use(cors({
   origin: '*', // For development flexibility; can restrict to specific domains in production
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+// Security HTTP headers with configurations allowing image loading from local uploads
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  crossOriginEmbedderPolicy: false
+}));
+
+// Rate limiter: Max 2000 requests per 15 minutes from an IP
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 2000,
+  message: { message: 'Too many requests from this IP, please try again after 15 minutes.' },
+  standardHeaders: true,
+  legacyHeaders: false
+});
+app.use('/api/', limiter);
 
 // Body parser
 app.use(express.json({ limit: '10mb' }));
