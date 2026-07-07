@@ -273,7 +273,7 @@
                   <!-- Short specs highlights -->
                   <div class="luxury-specs-tags">
                     <span v-for="spec in prod.specifications?.slice(0,2)" :key="spec.key" class="luxury-spec-pill">
-                      <span class="spec-dot"></span>
+                      <span class="spec-icon-svg" v-html="getSpecIconSvg(spec.key)"></span>
                       {{ spec.value }}
                     </span>
                   </div>
@@ -691,6 +691,28 @@ export default {
       if (!html) return '';
       const doc = new DOMParser().parseFromString(html, 'text/html');
       return doc.body.textContent || "";
+    },
+    getSpecIconSvg(key) {
+      const k = String(key || '').toLowerCase();
+      if (k.includes('chastota') || k.includes('frequency') || k.includes('diapazon') || k.includes('band')) {
+        return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21m0 0l-.813-5.096L9 21zm0 0h4.906M12 3v13m0-13L9 6m3-3l3 3m-3 7L9 11m3 2l3-2" /></svg>`;
+      }
+      if (k.includes('quvvat') || k.includes('power') || k.includes('watt') || k.includes('volt')) {
+        return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`;
+      }
+      if (k.includes('masofa') || k.includes('range') || k.includes('km') || k.includes('radius')) {
+        return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`;
+      }
+      if (k.includes('batareya') || k.includes('battery') || k.includes('mah') || k.includes('akkumulyator')) {
+        return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12H3m12-9H9a2 2 0 00-2 2v14a2 2 0 002 2h6a2 2 0 002-2V5a2 2 0 00-2-2z" /></svg>`;
+      }
+      if (k.includes('himoya') || k.includes('waterproof') || k.includes('ip') || k.includes('resistent')) {
+        return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`;
+      }
+      if (k.includes('og\'irlik') || k.includes('weight') || k.includes('gramm') || k.includes('gr')) {
+        return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>`;
+      }
+      return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>`;
     }
   }
 };
