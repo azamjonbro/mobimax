@@ -40,7 +40,9 @@
 
           <!-- Statistics Floating Cards -->
           <div class="stats-floating-card card stats-card-1">
-            <span class="stats-icon">🔥</span>
+            <span class="stats-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="22" height="22" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9.879z" /></svg>
+            </span>
             <div class="stats-info">
               <h4>10+ Brendlar</h4>
               <p>Motorola, Kenwood...</p>
@@ -48,7 +50,9 @@
           </div>
 
           <div class="stats-floating-card card stats-card-2">
-            <span class="stats-icon">📡</span>
+            <span class="stats-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="22" height="22" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            </span>
             <div class="stats-info">
               <h4>IP67 Himoya</h4>
               <p>Suv va changga chidamli</p>
