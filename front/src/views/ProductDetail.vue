@@ -620,13 +620,27 @@ export default {
   border-color: rgba(7, 27, 134, 0.1);
 }
 
+.spec-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.spec-icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
 .spec-key {
   font-size: 11px;
   text-transform: uppercase;
   color: var(--color-text-secondary);
   font-weight: 700;
   letter-spacing: 0.05em;
-  margin-bottom: 6px;
 }
 
 .spec-val {
