@@ -287,8 +287,8 @@
                     </div>
                   </div>
 
-                  <!-- Bottom buttons aligned stacked -->
-                  <div class="luxury-actions-buttons-stacked">
+                  <!-- Bottom buttons aligned side-by-side -->
+                  <div class="luxury-actions-buttons">
                     <button class="btn btn-primary add-cart-luxury-btn" @click="cartStore.addToCart(prod, 1)">
                       Savatga qo'shish
                     </button>
@@ -1278,11 +1278,6 @@ export default {
   gap: 32px;
 }
 
-@media (min-width: 1440px) {
-  .products-grid-luxury {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
 
 /* Product Card - Dynamic self-adjusting height, luxury layout */
 .product-card-luxury {
