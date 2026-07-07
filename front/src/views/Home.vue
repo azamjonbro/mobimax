@@ -127,22 +127,6 @@
         
         <div class="categories-scroller">
           <div 
-            class="category-card-luxury"
-            :class="{ active: filters.category === '' }"
-            @click="selectCategory('')"
-          >
-            <div class="category-icon-bg">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-              </svg>
-            </div>
-            <div class="category-card-info">
-              <h4>Barcha ratsiyalar</h4>
-              <p>To'liq katalog</p>
-            </div>
-          </div>
-
-          <div 
             v-for="cat in categories" 
             :key="cat._id"
             class="category-card-luxury"
@@ -237,14 +221,6 @@
           <div class="grid-controls-row">
             <span class="results-count-text">{{ pagination.total }} ta mahsulot topildi</span>
             <div class="controls-actions-row">
-              <!-- Mobile Filters Button Toggle -->
-              <button class="btn btn-secondary mobile-filter-btn" @click="showFilterDrawer = true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-right: 6px;">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                </svg>
-                Filtrlar
-              </button>
-
               <select v-model="filters.sort" @change="applyFilters" class="form-input sort-select-luxury">
                 <option value="">Saralash: Yangi kelganlar</option>
                 <option value="price_asc">Narx: arzonidan qimmatiga</option>
@@ -405,58 +381,7 @@
       </div>
     </section>
 
-    <!-- Apple-Style Bottom Sheet Filter Drawer (Mobile Only) -->
-    <div v-if="showFilterDrawer" class="bottom-sheet-backdrop" @click="showFilterDrawer = false"></div>
-    <div class="bottom-sheet" :class="{ open: showFilterDrawer }">
-      <div class="bottom-sheet-header">
-        <div class="sheet-indicator"></div>
-        <div class="sheet-title-row">
-          <h3>Filtrlash</h3>
-          <button class="clear-all-btn" @click="resetFilters">Tozalash</button>
-        </div>
-      </div>
-      
-      <div class="bottom-sheet-body">
-        <div class="filter-group">
-          <label class="form-label">Narx oralig'i (USD)</label>
-          <div class="price-range-inputs">
-            <input type="number" v-model="filters.minPrice" class="form-input" placeholder="Min" />
-            <span>—</span>
-            <input type="number" v-model="filters.maxPrice" class="form-input" placeholder="Max" />
-          </div>
-        </div>
 
-        <div class="filter-group">
-          <label class="form-label">Chastota diapazoni</label>
-          <select v-model="filters.frequency" class="form-input">
-            <option value="">Barchasi</option>
-            <option value="UHF">UHF (400-470 MHz)</option>
-            <option value="VHF">VHF (136-174 MHz)</option>
-            <option value="Dual">Dual Band</option>
-          </select>
-        </div>
-
-        <div class="filter-group">
-          <label class="form-label">Quvvat darajasi</label>
-          <select v-model="filters.power" class="form-input">
-            <option value="">Barchasi</option>
-            <option value="5 Watts">5 Watt</option>
-            <option value="8 Watts">8 Watt</option>
-            <option value="10 Watts">10 Watt</option>
-            <option value="50 Watts">50 Watt</option>
-          </select>
-        </div>
-
-        <div class="filter-group checkbox-group">
-          <input type="checkbox" id="mobile-sheet-stock" v-model="filters.inStock" />
-          <label for="mobile-sheet-stock">Faqat omborda borlar</label>
-        </div>
-      </div>
-
-      <div class="bottom-sheet-footer">
-        <button class="btn btn-primary apply-btn" @click="applyFiltersAndClose">Filtrlarni qo'llash</button>
-      </div>
-    </div>
 
     <!-- Quick Order Modal dialog -->
     <div v-if="quickOrderProduct" class="modal-backdrop" @click="closeQuickOrder"></div>
