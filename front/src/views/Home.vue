@@ -578,47 +578,7 @@ export default {
       this.saveSearchTerm(term);
       this.applyFilters();
     },
-    // Quick order modal
-    openQuickOrder(prod) {
-      this.quickOrderProduct = prod;
-      this.quickOrderForm.name = '';
-      this.quickOrderForm.phone = '';
-      this.quickOrderSuccess = false;
-    },
-    closeQuickOrder() {
-      this.quickOrderProduct = null;
-    },
-    async submitQuickOrder() {
-      if (!this.quickOrderForm.name || !this.quickOrderForm.phone) {
-        alert('Iltimos, ism va telefon raqamingizni kiriting.');
-        return;
-      }
-      this.quickOrderSubmitting = true;
-      try {
-        const payload = {
-          customer: {
-            name: this.quickOrderForm.name,
-            phone: this.quickOrderForm.phone,
-            region: 'Tezkor Buyurtma',
-            comment: `Tezkor Buyurtma: ${this.quickOrderProduct.name}`
-          },
-          items: [{
-            product: this.quickOrderProduct._id,
-            quantity: 1,
-            price: this.quickOrderProduct.price
-          }]
-        };
 
-        const res = await axios.post('/api/order', payload);
-        this.quickOrderLeadId = res.data.leadId;
-        this.quickOrderSuccess = true;
-      } catch (err) {
-        console.error(err);
-        alert('Tezkor buyurtma yuborishda xatolik. Iltimos qaytadan urining.');
-      } finally {
-        this.quickOrderSubmitting = false;
-      }
-    },
     getCategoryIconSvg(slug) {
       // Returns high-end inline SVG icons for the categories
       if (slug === 'portable-radios') {
@@ -1489,23 +1449,11 @@ export default {
 }
 
 .add-cart-luxury-btn {
-  flex: 1.2;
-  height: 40px !important;
-  font-size: 11px !important;
-  border-radius: 10px;
-  padding: 0 4px !important;
-  flex-shrink: 1;
-  min-width: 0;
-}
-
-.quote-luxury-btn {
-  flex: 0.8;
-  height: 40px !important;
-  font-size: 11px !important;
-  border-radius: 10px;
-  padding: 0 4px !important;
-  flex-shrink: 1;
-  min-width: 0;
+  width: 100%;
+  height: 44px !important;
+  font-size: 13px !important;
+  border-radius: 12px;
+  font-weight: 600;
 }
 
 /* Injected CRM CTA Card luxury style */
@@ -1769,14 +1717,7 @@ export default {
     padding: 60px 24px;
     margin: 40px -20px -20px;
   }
-  .luxury-actions-buttons {
-    flex-direction: column;
-    gap: 6px;
-  }
-  .add-cart-luxury-btn, .quote-luxury-btn {
-    width: 100%;
-    flex: none !important;
-  }
+
 }
 
 @media (max-width: 480px) {
