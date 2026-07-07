@@ -1739,13 +1739,7 @@ export default {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  .luxury-actions-buttons {
-    flex-direction: column;
-    gap: 6px;
-  }
-  .add-cart-luxury-btn, .quote-luxury-btn {
-    width: 100%;
-  }
+
   .product-card-luxury {
     height: 100%;
   }
