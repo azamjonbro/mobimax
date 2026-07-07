@@ -1382,9 +1382,9 @@ export default {
   }
 }
 
-/* Product Card - Height ~480px, luxury layout */
+/* Product Card - Height ~535px, luxury layout */
 .product-card-luxury {
-  height: 480px;
+  height: 535px;
   padding: 0;
   position: relative;
   display: flex;
