@@ -227,7 +227,9 @@
             <template v-for="(prod, index) in products" :key="prod._id">
               <!-- Injected CRM CTA Card -->
               <div v-if="index > 0 && index % 6 === 0" class="luxury-cta-card card text-center">
-                <div class="cta-luxury-emoji">📡</div>
+                <div class="cta-luxury-emoji">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="32" height="32" stroke-width="2" style="color: var(--color-primary);"><path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11.53M12 11c0-2.924-1.17-5.571-3.078-7.5M12 11h.01M9 11h-.01M4 9h.01M16 13h.01M20 11h.01M18 7h.01M15 4h.01" /></svg>
+                </div>
                 <h3>Maxsus loyiha bo'yicha ratsiyalar kerakmi?</h3>
                 <p>Bizning mutaxassis-injenerlarimiz sizning korxonangiz uchun to'liq signal tizimini loyihalashtirib berishadi.</p>
                 <div class="cta-luxury-buttons">
