@@ -137,12 +137,13 @@
                 <span class="product-sku">SKU: {{ prod.sku }}</span>
               </div>
               <h3 class="product-name" @click="viewProduct(prod.slug)">{{ prod.name }}</h3>
-              <p v-if="layout === 'list'" class="product-desc-snippet" v-html="stripHtml(prod.description)"></p>
+              <p class="product-desc-snippet" v-html="stripHtml(prod.description)"></p>
 
               <!-- Specs strip -->
               <div class="product-specs-strip">
                 <span v-for="spec in prod.specifications.slice(0, 3)" :key="spec.key" class="spec-tag">
-                  {{ spec.key }}: {{ spec.value }}
+                  <span class="spec-dot"></span>
+                  {{ spec.value }}
                 </span>
               </div>
 
