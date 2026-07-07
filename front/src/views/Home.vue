@@ -1853,7 +1853,7 @@ export default {
     width: 100%;
   }
   .product-card-luxury {
-    height: 480px;
+    height: 515px;
   }
 }
 </style>
