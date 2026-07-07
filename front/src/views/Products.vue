@@ -369,7 +369,10 @@ export default {
 
 /* Sidebar Filters */
 .sidebar-filters {
+  position: sticky;
+  top: 90px;
   align-self: start;
+  z-index: 10;
 }
 
 .filter-header {
