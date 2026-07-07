@@ -31,12 +31,17 @@
           <!-- Abstract Background Circle -->
           <div class="hero-bg-circle"></div>
           
-          <!-- Large Floating Walkie Talkie -->
-          <img 
-            :src="'/uploads/walkie_talkie_luxury_hero.png'" 
-            alt="Premium MobiMax Walkie Talkie" 
-            class="hero-floating-img"
-          />
+          <!-- Large Floating Walkie Talkie with dynamic slides -->
+          <div class="hero-image-slider">
+            <img 
+              v-for="(img, idx) in heroImages"
+              :key="img"
+              :src="img" 
+              alt="Premium MobiMax Walkie Talkie" 
+              class="hero-floating-img"
+              :class="{ active: currentHeroImageIndex === idx }"
+            />
+          </div>
 
           <!-- Statistics Floating Cards -->
           <div class="stats-floating-card card stats-card-1">
@@ -412,6 +417,14 @@ export default {
         page: 1,
         totalPages: 1
       },
+      heroImages: [
+        '/uploads/walkie_talkie_luxury_hero.png',
+        '/uploads/banner_hero_1.webp',
+        '/uploads/banner_hero_2.webp',
+        '/uploads/banner_hero_3.webp'
+      ],
+      currentHeroImageIndex: 0,
+      heroInterval: null
 
     };
   },
@@ -439,9 +452,15 @@ export default {
     this.fetchProducts();
     this.loadSearchHistory();
     document.addEventListener('click', this.handleClickOutside);
+    this.heroInterval = setInterval(() => {
+      this.currentHeroImageIndex = (this.currentHeroImageIndex + 1) % this.heroImages.length;
+    }, 3000);
   },
   beforeUnmount() {
     document.removeEventListener('click', this.handleClickOutside);
+    if (this.heroInterval) {
+      clearInterval(this.heroInterval);
+    }
   },
   methods: {
     async fetchFilterOptions() {
@@ -728,12 +747,33 @@ export default {
   z-index: 1;
 }
 
-.hero-floating-img {
-  max-height: 380px;
-  max-width: 100%;
+.hero-image-slider {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-image-slider .hero-floating-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  pointer-events: none;
   z-index: 2;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.08));
+}
+
+.hero-image-slider .hero-floating-img.active {
+  opacity: 1;
+  pointer-events: auto;
   animation: float 6s ease-in-out infinite;
 }
 
