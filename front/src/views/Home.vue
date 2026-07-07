@@ -405,7 +405,58 @@
       </div>
     </section>
 
+    <!-- Apple-Style Bottom Sheet Filter Drawer (Mobile Only) -->
+    <div v-if="showFilterDrawer" class="bottom-sheet-backdrop" @click="showFilterDrawer = false"></div>
+    <div class="bottom-sheet" :class="{ open: showFilterDrawer }">
+      <div class="bottom-sheet-header">
+        <div class="sheet-indicator"></div>
+        <div class="sheet-title-row">
+          <h3>Filtrlash</h3>
+          <button class="clear-all-btn" @click="resetFilters">Tozalash</button>
+        </div>
+      </div>
+      
+      <div class="bottom-sheet-body">
+        <div class="filter-group">
+          <label class="form-label">Narx oralig'i (USD)</label>
+          <div class="price-range-inputs">
+            <input type="number" v-model="filters.minPrice" class="form-input" placeholder="Min" />
+            <span>—</span>
+            <input type="number" v-model="filters.maxPrice" class="form-input" placeholder="Max" />
+          </div>
+        </div>
 
+        <div class="filter-group">
+          <label class="form-label">Chastota diapazoni</label>
+          <select v-model="filters.frequency" class="form-input">
+            <option value="">Barchasi</option>
+            <option value="UHF">UHF (400-470 MHz)</option>
+            <option value="VHF">VHF (136-174 MHz)</option>
+            <option value="Dual">Dual Band</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="form-label">Quvvat darajasi</label>
+          <select v-model="filters.power" class="form-input">
+            <option value="">Barchasi</option>
+            <option value="5 Watts">5 Watt</option>
+            <option value="8 Watts">8 Watt</option>
+            <option value="10 Watts">10 Watt</option>
+            <option value="50 Watts">50 Watt</option>
+          </select>
+        </div>
+
+        <div class="filter-group checkbox-group">
+          <input type="checkbox" id="mobile-sheet-stock" v-model="filters.inStock" />
+          <label for="mobile-sheet-stock">Faqat omborda borlar</label>
+        </div>
+      </div>
+
+      <div class="bottom-sheet-footer">
+        <button class="btn btn-primary apply-btn" @click="applyFiltersAndClose">Filtrlarni qo'llash</button>
+      </div>
+    </div>
 
     <!-- Quick Order Modal dialog -->
     <div v-if="quickOrderProduct" class="modal-backdrop" @click="closeQuickOrder"></div>
@@ -1218,19 +1269,20 @@ export default {
 
 .catalog-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 32px;
   max-width: 1300px;
   margin: 0 auto;
 }
 
 .desktop-filters-sidebar {
+  position: sticky;
+  top: 90px;
   align-self: start;
+  z-index: 10;
 }
 
 .filters-card {
-  position: sticky;
-  top: 90px;
   padding: 24px;
 }
 
