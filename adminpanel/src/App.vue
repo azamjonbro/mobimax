@@ -1,7 +1,22 @@
 <template>
   <div class="admin-app-container">
+    <!-- Mobile Header -->
+    <header v-if="isLoggedIn" class="admin-mobile-header">
+      <button class="menu-toggle-btn" @click="toggleSidebar" aria-label="Menyuni ochish">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <div class="sidebar-brand-mobile">
+        MobiMax <span>Admin</span>
+      </div>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div v-if="isLoggedIn && sidebarOpen" class="sidebar-overlay" @click="closeSidebar"></div>
+
     <!-- Sidebar - Show only if logged in and not on login page -->
-    <aside v-if="isLoggedIn" class="admin-sidebar">
+    <aside v-if="isLoggedIn" class="admin-sidebar" :class="{ 'open': sidebarOpen }">
       <div class="sidebar-brand">
         MobiMax <span>Admin</span>
       </div>
@@ -75,15 +90,32 @@ import axios from 'axios';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      sidebarOpen: false
+    };
+  },
   computed: {
     isLoggedIn() {
       return this.$route.path !== '/login';
     }
   },
+  watch: {
+    $route() {
+      this.sidebarOpen = false;
+    }
+  },
   methods: {
+    toggleSidebar() {
+      this.sidebarOpen = !this.sidebarOpen;
+    },
+    closeSidebar() {
+      this.sidebarOpen = false;
+    },
     logout() {
       localStorage.removeItem('mobimax_admin_token');
       delete axios.defaults.headers.common['Authorization'];
+      this.sidebarOpen = false;
       this.$router.push('/login');
     }
   }
@@ -119,6 +151,16 @@ export default {
 }
 
 .sidebar-brand span {
+  color: var(--color-accent);
+}
+
+.sidebar-brand-mobile {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.sidebar-brand-mobile span {
   color: var(--color-accent);
 }
 
@@ -175,5 +217,79 @@ export default {
   margin-left: 0;
   max-width: 100%;
   padding: 0;
+}
+
+.admin-mobile-header {
+  display: none;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .admin-mobile-header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0 20px;
+    z-index: 99;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: var(--transition-smooth);
+  }
+
+  .menu-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .admin-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 101;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+  }
+
+  .admin-main-content {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 80px 16px 24px 16px;
+  }
 }
 </style>

@@ -129,6 +129,14 @@ export default {
   margin-bottom: 32px;
 }
 
+@media (max-width: 576px) {
+  .crud-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
 .loading-state {
   text-align: center;
   padding: 100px 0;
